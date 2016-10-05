@@ -1,1 +1,1 @@
-overviewer.exe --genpoi --config=C:\Users\Jens\Downloads\overviewer\config.py
+overviewer.exe --genpoi --skip-scan --config=C:\Users\Jens\Downloads\overviewer\config.py
