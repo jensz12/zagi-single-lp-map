@@ -26,6 +26,27 @@ def portalFilter(poi):
             return (poi['name'], poi['description'])
         except KeyError:
             return poi['name'] + '\n'
+            
+def villagerFilter(poi):
+    if poi['id'] == 'Villager':
+        try:
+            return (poi['name'], poi['description'])
+        except KeyError:
+            return poi['name'] + '\n'
+            
+def farmCreeperFilter(poi):
+    if poi['id'] == 'CreeperFarm':
+        try:
+            return (poi['name'], poi['description'])
+        except KeyError:
+            return poi['name'] + '\n'
+            
+def farmIceFilter(poi):
+    if poi['id'] == 'IsFarm':
+        try:
+            return (poi['name'], poi['description'])
+        except KeyError:
+            return poi['name'] + '\n'
 
 end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
 
@@ -98,12 +119,32 @@ renders["singleoverworld"] = {
                     'z':-1335,
                     'name':'Portal',
                     'description':'Portal til Nether'},
-                    ],
+                    {'id':'Villager',
+                    'x':2565,
+                    'y':64,
+                    'z':2250,
+                    'name':'Villager øen',
+                    'description':'Villager øen'},
+                    {'id':'CreeperFarm',
+                    'x':3073,
+                    'y':64,
+                    'z':2300,
+                    'name':'Charged Creeper farm',
+                    'description':'Charged Creeper farm. Bygget i episode 68'},
+                    {'id':'IsFarm',
+                    'x':2671,
+                    'y':64,
+                    'z':3852,
+                    'name':'Is farmen',
+                    'description':'Is farmen. Bygget i episode 72'},],
 	'markers':[ 
 				dict(name="FarmSheep", filterFunction=farmSheepFilter, icon="icons/marker_farm_sheep.png"),
                 dict(name="Skib", filterFunction=shipFilter, icon="icons/marker_ship.png"),
                 dict(name="Billede", filterFunction=billedeFilter, icon="icons/marker_zagi.png"),
-                dict(name="Portaler", filterFunction=portalFilter, icon="icons/marker_portal.png"),],
+                dict(name="Portaler", filterFunction=portalFilter, icon="icons/marker_portal.png"),
+                dict(name="Villager", filterFunction=villagerFilter, icon="icons/marker_villager.png"),
+                dict(name="CreeperFarm", filterFunction=farmCreeperFilter, icon="icons/marker_farm_creeper.png"),
+                dict(name="IsFarm", filterFunction=farmIceFilter, icon="icons/marker_farm_ice.png"),],
 }
 # Overworld caves
 renders["singlecave"] = {
@@ -172,12 +213,33 @@ renders["singlenight"] = {
                     'y':64,
                     'z':-1335,
                     'name':'Portal',
-                    'description':'Portal til Nether'},],
+                    'description':'Portal til Nether'},
+                    {'id':'Villager',
+                    'x':2565,
+                    'y':64,
+                    'z':2250,
+                    'name':'Villager øen',
+                    'description':'Villager øen'},
+                    {'id':'CreeperFarm',
+                    'x':3073,
+                    'y':64,
+                    'z':2300,
+                    'name':'Charged Creeper farm',
+                    'description':'Charged Creeper farm. Bygget i episode 68'},
+                    {'id':'IsFarm',
+                    'x':2671,
+                    'y':64,
+                    'z':3852,
+                    'name':'Is farmen',
+                    'description':'Is farmen. Bygget i episode 72'},],
 	'markers':[ 
 				dict(name="FarmSheep", filterFunction=farmSheepFilter, icon="icons/marker_farm_sheep.png"),
                 dict(name="Skib", filterFunction=shipFilter, icon="icons/marker_ship.png"),
                 dict(name="Billede", filterFunction=billedeFilter, icon="icons/marker_zagi.png"),
-                dict(name="Portaler", filterFunction=portalFilter, icon="icons/marker_portal.png"),],
+                dict(name="Portaler", filterFunction=portalFilter, icon="icons/marker_portal.png"),
+                dict(name="Villager", filterFunction=villagerFilter, icon="icons/marker_villager.png"),
+                dict(name="CreeperFarm", filterFunction=farmCreeperFilter, icon="icons/marker_farm_creeper.png"),
+                dict(name="IsFarm", filterFunction=farmIceFilter, icon="icons/marker_farm_ice.png"),],
 }
 # Nether med Smooth Lightning
 renders["singlenether"] = {
